@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Prompt Template</title>
+<meta name="description" content="The Role + Goal + Example prompt template, free. Copy, paste, get better AI answers.">
+<style>
+  :root {
+    --bg: #0B0B0F; --card: #15151C; --line: #26262F; --text: #F4F4F6; --dim: #9A9AA6;
+    --lime: #C6FF3D; --cyan: #3DE0FF; --pink: #FF4FA3;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.5px; }
+  h1 em { font-style: normal; color: var(--lime); }
+  h2 { font-size: 20px; margin: 40px 0 12px; }
+  p { margin: 0 0 12px; color: var(--dim); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin: 0 0 14px; }
+  .card.hero { border-color: var(--lime); box-shadow: 0 0 40px #C6FF3D22; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--bg); background: var(--lime); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
+  .card h3 { margin: 0 0 8px; font-size: 17px; }
+  pre { margin: 0 0 12px; white-space: pre-wrap; word-wrap: break-word; font: 14px/1.55 ui-monospace, "SF Mono", Menlo, monospace; color: var(--text); background: #0F0F14; border-radius: 12px; padding: 14px; }
+  pre b { color: var(--lime); font-weight: 700; }
+  button { all: unset; cursor: pointer; display: inline-block; font-weight: 800; font-size: 14px; color: var(--bg); background: var(--lime); border-radius: 999px; padding: 9px 18px; }
+  button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  ol { padding-left: 20px; margin: 0 0 12px; color: var(--dim); }
+  ol strong { color: var(--text); }
+  a.tool { display: block; text-decoration: none; color: var(--text); }
+  a.tool span { color: var(--cyan); font-weight: 700; }
+  .small { font-size: 13px; color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Your AI answers are mid.<br><em>Here's the fix.</em></h1>
+  <p>Give the AI three things: a <strong>role</strong>, a <strong>goal</strong>, and an <strong>example</strong>. Copy the template, fill the brackets, paste it into ChatGPT, Claude or Gemini.</p>
+
+  <div class="card hero">
+    <span class="tag">The template</span>
+<pre id="t-main"><b>Role:</b> You are [who the AI should be, e.g. a recruiter at a top tech company].
+<b>Goal:</b> [What you want, and what "good" means, e.g. get me the interview in one read].
+<b>Example:</b> Here's the vibe I want: [paste an example you like].
+
+<b>Task:</b> [What to make]. Ask me up to 3 questions first if anything is unclear.</pre>
+    <button data-copy="t-main">Copy template</button>
+  </div>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li><strong>Role</strong> tells the AI whose knowledge to use.</li>
+    <li><strong>Goal</strong> tells it what winning looks like, so it stops guessing.</li>
+    <li><strong>Example</strong> shows the tone and length. One example beats ten adjectives.</li>
+  </ol>
+
+  <h2>Ready-to-use versions</h2>
+
+  <div class="card">
+    <h3>Job application message</h3>
+<pre id="t-job"><b>Role:</b> You are a recruiter at [company] who reads 200 applications a day.
+<b>Goal:</b> Write a 3-sentence message that gets me a reply. Specific results, no buzzwords.
+<b>Example:</b> "I shipped 3 features users begged for. Here's how I'd do it for your team. 15-min call?"
+
+<b>Task:</b> My experience: [paste]. The role: [paste job post].</pre>
+    <button data-copy="t-job">Copy</button>
+  </div>
+
+  <div class="card">
+    <h3>Study notes that stick</h3>
+<pre id="t-study"><b>Role:</b> You are the best tutor in [subject], known for making hard stuff simple.
+<b>Goal:</b> Help me remember this for an exam in [days]. Short, clear, with memory hooks.
+<b>Example:</b> "Mitochondria = the cell's power bank. No power bank, no energy, phone dies."
+
+<b>Task:</b> Turn these notes into a one-page cheat sheet plus 5 quiz questions: [paste].</pre>
+    <button data-copy="t-study">Copy</button>
+  </div>
+
+  <div class="card">
+    <h3>Instagram / TikTok caption</h3>
+<pre id="t-caption"><b>Role:</b> You are a social media manager for creators with 1M+ followers.
+<b>Goal:</b> A caption that makes people stop, read and comment. Under 150 characters.
+<b>Example:</b> "POV: you finally learned how to prompt 💀 save this before you forget"
+
+<b>Task:</b> My post is about: [describe]. Give me 5 options.</pre>
+    <button data-copy="t-caption">Copy</button>
+  </div>
+
+  <div class="card">
+    <h3>Hard message to send</h3>
+<pre id="t-msg"><b>Role:</b> You are a calm, emotionally smart friend who is great with words.
+<b>Goal:</b> Say what I need to say, kindly, without starting a fight. Max 4 sentences.
+<b>Example:</b> "Hey, I've been thinking about this and I want to be honest with you..."
+
+<b>Task:</b> Situation: [describe]. What I want them to know: [describe].</pre>
+    <button data-copy="t-msg">Copy</button>
+  </div>
+
+  <div class="card">
+    <h3>AI video prompt</h3>
+<pre id="t-video"><b>Role:</b> You are a cinematographer who writes prompts for AI video tools.
+<b>Goal:</b> One prompt that gives a scroll-stopping 5-second clip. Camera move, light, mood.
+<b>Example:</b> "Slow push-in on a neon-lit ramen bar at night, rain on the window, warm steam, 35mm film look."
+
+<b>Task:</b> My idea: [describe]. Write 3 prompts, from safe to wild.</pre>
+    <button data-copy="t-video">Copy</button>
+  </div>
+
+  <h2>Tools I use</h2>
+  <div class="card">
+    <a class="tool" id="tool-video" href="https://higgsfield.ai" rel="sponsored noopener" target="_blank">
+      <h3>Higgsfield: AI video from a prompt</h3>
+      <p>Paste the video prompt above and get the clip. <span>Try it →</span></p>
+    </a>
+  </div>
+  <p class="small">Some links here are affiliate links: if you sign up, I may earn a commission at no extra cost to you.</p>
+</main>
+<script>
+  document.querySelectorAll("button[data-copy]").forEach((b) => {
+    b.addEventListener("click", async () => {
+      const text = document.getElementById(b.dataset.copy).innerText;
+      const label = b.textContent;
+      try { await navigator.clipboard.writeText(text); b.textContent = "Copied ✓"; }
+      catch { b.textContent = "Select and copy"; }
+      setTimeout(() => (b.textContent = label), 1600);
+    });
+  });
+</script>
+</body>
+</html>
