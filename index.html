@@ -3,41 +3,179 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Prompt Template</title>
-<meta name="description" content="The Role + Goal + Example prompt template, free. Copy, paste, get better AI answers.">
+<title>Free AI Video Prompt Pack</title>
+<meta name="description" content="10 free AI video prompts with the camera move built in. Copy one, paste it, get the shot.">
 <style>
   :root {
-    --bg: #0B0B0F; --card: #15151C; --line: #26262F; --text: #F4F4F6; --dim: #9A9AA6;
-    --lime: #C6FF3D; --cyan: #3DE0FF; --pink: #FF4FA3;
+    --bg: #07070C; --card: #12121A; --line: #2A2A3A; --text: #F6F6F8; --dim: #8B8B9C;
+    --lime: #C8FF2E; --cyan: #38E3FF; --pink: #FF3DA5;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
-  h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.5px; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 36px; line-height: 1.05; margin: 0 0 10px; letter-spacing: -0.8px; font-weight: 900; }
   h1 em { font-style: normal; color: var(--lime); }
-  h2 { font-size: 20px; margin: 40px 0 12px; }
+  h2 { font-size: 21px; margin: 36px 0 12px; }
+  h3 { margin: 0 0 8px; font-size: 17px; }
   p { margin: 0 0 12px; color: var(--dim); }
+  p strong, li strong { color: var(--text); }
+  .eyebrow { font: 700 12px/1 ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace; letter-spacing: 2px; color: var(--cyan); margin: 0 0 14px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin: 0 0 14px; }
-  .card.hero { border-color: var(--lime); box-shadow: 0 0 40px #C6FF3D22; }
-  .tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--bg); background: var(--lime); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
-  .card h3 { margin: 0 0 8px; font-size: 17px; }
-  pre { margin: 0 0 12px; white-space: pre-wrap; word-wrap: break-word; font: 14px/1.55 ui-monospace, "SF Mono", Menlo, monospace; color: var(--text); background: #0F0F14; border-radius: 12px; padding: 14px; }
+  .card.offer { border-color: var(--lime); box-shadow: 0 0 40px #C8FF2E22; }
+  .card.offer p { color: var(--text); }
+  .big { font-size: 22px; font-weight: 900; line-height: 1.15; color: var(--lime); margin: 0 0 8px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--bg); background: var(--cyan); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
+  pre { margin: 0 0 12px; white-space: pre-wrap; word-wrap: break-word; font: 14px/1.55 ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace; color: var(--text); background: #0C0C12; border-radius: 12px; padding: 14px; }
   pre b { color: var(--lime); font-weight: 700; }
-  button { all: unset; cursor: pointer; display: inline-block; font-weight: 800; font-size: 14px; color: var(--bg); background: var(--lime); border-radius: 999px; padding: 9px 18px; }
-  button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  button, a.try, a.cta { all: unset; cursor: pointer; display: inline-block; font-weight: 800; font-size: 14px; border-radius: 999px; padding: 10px 18px; }
+  button { color: var(--text); border: 1px solid var(--line); }
+  a.try, a.cta { color: var(--bg); background: var(--lime); }
+  a.cta { display: block; text-align: center; font-size: 17px; padding: 15px 18px; margin: 14px 0 10px; }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
   ol { padding-left: 20px; margin: 0 0 12px; color: var(--dim); }
-  ol strong { color: var(--text); }
-  a.tool { display: block; text-decoration: none; color: var(--text); }
-  a.tool span { color: var(--cyan); font-weight: 700; }
+  details { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 18px; }
+  summary { cursor: pointer; font-weight: 800; font-size: 17px; margin-bottom: 14px; }
   .small { font-size: 13px; color: var(--dim); }
 </style>
 </head>
 <body>
 <main>
-  <h1>Your AI answers are mid.<br><em>Here's the fix.</em></h1>
-  <p>Give the AI three things: a <strong>role</strong>, a <strong>goal</strong>, and an <strong>example</strong>. Copy the template, fill the brackets, paste it into ChatGPT, Claude or Gemini.</p>
+  <p class="eyebrow">FREE · AI VIDEO PROMPT PACK</p>
+  <h1>Copy a prompt.<br><em>Get the shot.</em></h1>
+  <p>10 AI video prompts with the <strong>camera move built in</strong>, so your clip looks directed instead of random. Copy one, swap the words in [brackets], paste it into your AI video tool.</p>
 
-  <div class="card hero">
+  <div class="card offer" id="offer">
+    <p class="big">Up to 50% off Higgsfield, for 3 hours</p>
+    <p>Higgsfield is the AI video tool these prompts are written for: photo to video, camera moves as presets, and Kling, Veo and Seedance in one place.</p>
+    <p>Higgsfield gives people who join through a creator link <strong>up to 50% off, active for three hours from the moment you log in</strong>. The clock starts at login, so look at the plans right after you sign up.</p>
+    <a class="cta" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Open Higgsfield →</a>
+    <p class="small">Affiliate link: if you subscribe, I may earn a commission at no extra cost to you. The discount is Higgsfield's offer and they set the final amount.</p>
+  </div>
+
+  <h2>How to use the pack</h2>
+  <ol>
+    <li><strong>Copy</strong> a prompt below.</li>
+    <li><strong>Swap</strong> the words in [brackets] for your own idea.</li>
+    <li><strong>Paste</strong> it into an AI video tool. "Try it in Higgsfield" copies the prompt and opens the tool.</li>
+  </ol>
+
+  <h2>The prompts</h2>
+
+  <div class="card">
+    <span class="tag">Photo → video</span>
+    <h3>1. Make a portrait come alive</h3>
+<pre id="v1">She blinks and smiles slightly, her hair moves in a light breeze, slow push-in on her face, the background stays still.</pre>
+    <p class="small">Upload your photo first, then paste this.</p>
+    <div class="row">
+      <button data-copy="v1">Copy</button>
+      <a class="try" data-copy="v1" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Photo → video</span>
+    <h3>2. Make a landscape move</h3>
+<pre id="v2">Clouds drift and the water ripples, slow pan from left to right, everything else stays still.</pre>
+    <p class="small">Upload your photo first, then paste this.</p>
+    <div class="row">
+      <button data-copy="v2">Copy</button>
+      <a class="try" data-copy="v2" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Camera move</span>
+    <h3>3. Push-in (builds tension)</h3>
+<pre id="v3">[Subject] sits alone in a diner at night, slow push-in on their face, neon light through rain on the window, 35mm film look.</pre>
+    <div class="row">
+      <button data-copy="v3">Copy</button>
+      <a class="try" data-copy="v3" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Camera move</span>
+    <h3>4. Orbit (shows off a product)</h3>
+<pre id="v4">[Product] on a stone pedestal, slow orbit around it, soft studio light, dark background, shallow depth of field.</pre>
+    <div class="row">
+      <button data-copy="v4">Copy</button>
+      <a class="try" data-copy="v4" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Camera move</span>
+    <h3>5. Crash zoom (stops the scroll)</h3>
+<pre id="v5">[Subject] turns to the camera on a busy neon street, crash zoom to their face, motion blur, night.</pre>
+    <div class="row">
+      <button data-copy="v5">Copy</button>
+      <a class="try" data-copy="v5" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Camera move</span>
+    <h3>6. Tilt up (reveals the scene)</h3>
+<pre id="v6">Start on [subject]&#x27;s shoes on wet pavement, tilt up to reveal a huge city skyline at sunset.</pre>
+    <div class="row">
+      <button data-copy="v6">Copy</button>
+      <a class="try" data-copy="v6" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Camera move</span>
+    <h3>7. Tracking shot (follows the action)</h3>
+<pre id="v7">Low-angle tracking shot following [subject] running through a forest, handheld feel, morning fog, sun rays through the trees.</pre>
+    <div class="row">
+      <button data-copy="v7">Copy</button>
+      <a class="try" data-copy="v7" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Camera move</span>
+    <h3>8. Drone pull-back (the big ending)</h3>
+<pre id="v8">[Subject] stands on a cliff edge, drone shot pulling back and up to reveal the ocean, golden hour.</pre>
+    <div class="row">
+      <button data-copy="v8">Copy</button>
+      <a class="try" data-copy="v8" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Style</span>
+    <h3>9. Slow-motion close-up</h3>
+<pre id="v9">Extreme close-up of [coffee pouring into a cup], slow motion, steam rising, warm side light, macro lens.</pre>
+    <div class="row">
+      <button data-copy="v9">Copy</button>
+      <a class="try" data-copy="v9" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="tag">Style</span>
+    <h3>10. The 4-part formula (fill your own)</h3>
+<pre id="v10">[Subject] [action], [camera move], [light and time of day].</pre>
+    <p class="small">Subject, action, camera, light. Skip one and the AI guesses it.</p>
+    <div class="row">
+      <button data-copy="v10">Copy</button>
+      <a class="try" data-copy="v10" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+    </div>
+  </div>
+
+  <div class="card offer">
+    <p class="big">Ready to make one?</p>
+    <p>Sign up through this link and Higgsfield's creator discount (up to 50% off) is active for three hours from your first login.</p>
+    <a class="cta" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try a prompt in Higgsfield →</a>
+    <p class="small">Affiliate link. I may earn a commission if you subscribe.</p>
+  </div>
+
+  <details>
+    <summary>Bonus: the ChatGPT prompt template</summary>
+    <p>For text answers, give the AI three things: a <strong>role</strong>, a <strong>goal</strong>, and an <strong>example</strong>. Works in ChatGPT, Claude or Gemini.</p>
+  <div class="card">
     <span class="tag">The template</span>
 <pre id="t-main"><b>Role:</b> You are [who the AI should be, e.g. a recruiter at a top tech company].
 <b>Goal:</b> [What you want, and what "good" means, e.g. get me the interview in one read].
@@ -47,14 +185,14 @@
     <button data-copy="t-main">Copy template</button>
   </div>
 
-  <h2>How to use it</h2>
+  <h3>How to use it</h3>
   <ol>
     <li><strong>Role</strong> tells the AI whose knowledge to use.</li>
     <li><strong>Goal</strong> tells it what winning looks like, so it stops guessing.</li>
     <li><strong>Example</strong> shows the tone and length. One example beats ten adjectives.</li>
   </ol>
 
-  <h2>Ready-to-use versions</h2>
+  <h3>Ready-to-use versions</h3>
 
   <div class="card">
     <h3>Job application message</h3>
@@ -96,35 +234,22 @@
     <button data-copy="t-msg">Copy</button>
   </div>
 
-  <div class="card">
-    <h3>AI video prompt</h3>
-<pre id="t-video"><b>Role:</b> You are a cinematographer who writes prompts for AI video tools.
-<b>Goal:</b> One prompt that gives a scroll-stopping 5-second clip. Camera move, light, mood.
-<b>Example:</b> "Slow push-in on a neon-lit ramen bar at night, rain on the window, warm steam, 35mm film look."
+  </details>
 
-<b>Task:</b> My idea: [describe]. Write 3 prompts, from safe to wild.</pre>
-    <button data-copy="t-video">Copy</button>
-  </div>
-
-  <h2>Tools I use</h2>
-  <div class="card">
-    <a class="tool" id="tool-video" href="https://higgsfield.ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">
-      <h3>Higgsfield: AI video from a prompt</h3>
-      <p>Paste the video prompt above and get the clip. <span>Try it →</span></p>
-    </a>
-  </div>
-  <p class="small">Some links here are affiliate links: if you sign up, I may earn a commission at no extra cost to you.</p>
+  <p class="small" style="margin-top:36px">Links to Higgsfield on this page are affiliate links: if you sign up and subscribe, I may earn a commission at no extra cost to you. The camera-move animations in my Reels are drawn demos, not AI output.</p>
 </main>
 <script>
+  const copy = async (id) => navigator.clipboard.writeText(document.getElementById(id).innerText);
   document.querySelectorAll("button[data-copy]").forEach((b) => {
     b.addEventListener("click", async () => {
-      const text = document.getElementById(b.dataset.copy).innerText;
       const label = b.textContent;
-      try { await navigator.clipboard.writeText(text); b.textContent = "Copied ✓"; }
+      try { await copy(b.dataset.copy); b.textContent = "Copied ✓"; }
       catch { b.textContent = "Select and copy"; }
       setTimeout(() => (b.textContent = label), 1600);
     });
   });
+  // "Try it" copies the prompt on the way out, so it is ready to paste.
+  document.querySelectorAll("a.try").forEach((a) => a.addEventListener("click", () => { copy(a.dataset.copy).catch(() => {}); }));
 </script>
 </body>
 </html>
