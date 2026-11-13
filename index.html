@@ -3,309 +3,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steal My AI Video Prompts</title>
-<meta name="description" content="10 free AI video prompts with the camera move built in. Copy one, paste it, get the shot.">
+<title>fate loading · the sauce</title>
+<meta name="description" content="The exact prompts behind every fate loading Reel. Copy the shots, cook your own what-if.">
 <style>
-  :root {
-    --bg: #07070C; --card: #12121A; --line: #2A2A3A; --text: #F6F6F8; --dim: #8B8B9C;
-    --lime: #C8FF2E; --cyan: #38E3FF; --pink: #FF3DA5;
-  }
+  :root { --bg: #08080D; --card: #111119; --line: #26263A; --text: #F4F4F7; --dim: #8E8EA3; --lime: #C8FF2E; --hot: #FF3DA5; }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 28px 16px 64px; }
-  h1 { font-size: 36px; line-height: 1.05; margin: 0 0 10px; letter-spacing: -0.8px; font-weight: 900; }
+  main { max-width: 680px; margin: 0 auto; padding: 28px 16px 120px; }
+  .brand { display: flex; align-items: center; gap: 12px; margin: 0 0 30px; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; }
+  .logo i { display: block; width: 26px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--lime) 62%, #2A2A3D 62%); }
+  .brand b { font-weight: 900; letter-spacing: -0.3px; }
+  .brand span { display: block; font-size: 13px; color: var(--dim); }
+  .loading { font: 700 12px/1 ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace; letter-spacing: 2px; color: var(--lime); margin: 0 0 12px; }
+  .loading::after { content: "▍"; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .loading::after { animation: none; } }
+  h1 { font-size: clamp(34px, 9vw, 52px); line-height: 0.98; margin: 0 0 14px; letter-spacing: -1.6px; font-weight: 900; }
   h1 em { font-style: normal; color: var(--lime); }
-  h2 { font-size: 21px; margin: 36px 0 12px; }
-  h3 { margin: 0 0 8px; font-size: 17px; }
   p { margin: 0 0 12px; color: var(--dim); }
-  p strong, li strong { color: var(--text); }
-  .eyebrow { font: 700 12px/1 ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace; letter-spacing: 2px; color: var(--cyan); margin: 0 0 14px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin: 0 0 14px; }
-  .card.offer { border-color: var(--lime); box-shadow: 0 0 40px #C8FF2E22; }
-  .card.offer p { color: var(--text); }
-  .big { font-size: 22px; font-weight: 900; line-height: 1.15; color: var(--lime); margin: 0 0 8px; }
-  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--bg); background: var(--cyan); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
-  pre { margin: 0 0 12px; white-space: pre-wrap; word-wrap: break-word; font: 14px/1.55 ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace; color: var(--text); background: #0C0C12; border-radius: 12px; padding: 14px; }
-  pre b { color: var(--lime); font-weight: 700; }
-  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  button, a.try, a.cta { all: unset; cursor: pointer; display: inline-block; font-weight: 800; font-size: 14px; border-radius: 999px; padding: 10px 18px; }
+  p strong { color: var(--text); }
+  .ep { display: grid; grid-template-columns: 132px 1fr; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 14px; margin: 0 0 14px; }
+  .ep img { width: 132px; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; background: #000; }
+  .ep-body { min-width: 0; }
+  .ep-no { font: 700 12px/1 ui-monospace, "JetBrains Mono", Menlo, monospace; letter-spacing: 2px; color: var(--dim); margin: 4px 0 8px; }
+  .new { color: var(--bg); background: var(--hot); border-radius: 999px; padding: 2px 8px; margin-left: 6px; letter-spacing: 1px; }
+  .ep h2 { font-size: 21px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.4px; text-transform: lowercase; }
+  pre { margin: 0 0 12px; max-height: 190px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; font: 13px/1.55 ui-monospace, "JetBrains Mono", Menlo, monospace; color: var(--text); background: #0A0A10; border-radius: 12px; padding: 12px; }
+  pre b { color: var(--lime); }
+  @media (max-width: 480px) { .ep { grid-template-columns: 1fr; } .ep img { width: 100%; max-height: 300px; object-position: center 40%; aspect-ratio: auto; } }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  button, a.try, a.cta, .bar a { all: unset; cursor: pointer; display: inline-block; font-weight: 800; font-size: 14px; border-radius: 999px; padding: 10px 16px; }
   button { color: var(--text); border: 1px solid var(--line); }
-  a.try, a.cta { color: var(--bg); background: var(--lime); }
+  a.try, a.cta, .bar a { color: var(--bg); background: var(--lime); }
   a.cta { display: block; text-align: center; font-size: 17px; padding: 15px 18px; margin: 14px 0 10px; }
-  button:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
-  ol { padding-left: 20px; margin: 0 0 12px; color: var(--dim); }
-  details { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 18px; }
-  summary { cursor: pointer; font-weight: 800; font-size: 17px; margin-bottom: 14px; }
-  a.plain { color: var(--cyan); }
-  .bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 12px; padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: rgba(7,7,12,0.94); border-top: 1px solid var(--line); backdrop-filter: blur(8px); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--hot); outline-offset: 2px; }
+  .offer { border: 1px solid var(--lime); border-radius: 20px; padding: 18px; margin: 22px 0 30px; box-shadow: 0 0 50px #C8FF2E1A; }
+  .offer .big { font-size: 22px; font-weight: 900; line-height: 1.15; color: var(--text); margin: 0 0 8px; }
+  .offer .big em { font-style: normal; color: var(--lime); }
+  .small { font-size: 13px; }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: rgba(8,8,13,0.94); border-top: 1px solid var(--line); backdrop-filter: blur(8px); }
   .bar p { margin: 0; flex: 1; min-width: 0; font-size: 13px; line-height: 1.3; color: var(--text); }
   .bar p span { color: var(--lime); font-weight: 800; }
-  .bar a { all: unset; cursor: pointer; flex-shrink: 0; font-weight: 800; font-size: 14px; color: var(--bg); background: var(--lime); border-radius: 999px; padding: 11px 16px; }
-  main { padding-bottom: 110px; }
-  .small { font-size: 13px; color: var(--dim); }
 </style>
 </head>
 <body>
 <main>
-  <p class="eyebrow">FREE · AI VIDEO PROMPT PACK</p>
-  <h1>Your AI video looks like a screensaver.<br><em>Steal my prompts.</em></h1>
-  <p>10 AI video prompts with the <strong>camera move built in</strong>, so your clip looks directed instead of random. Copy one, swap the words in [brackets], paste it into your AI video tool.</p>
+  <div class="brand"><div class="logo"><i></i></div><div><b>fate loading</b><span>@fateloading · dumb what-ifs, cooked with AI</span></div></div>
 
-  <div class="card offer" id="offer">
-    <p class="big">Free account. Up to 50% off for 3 hours.</p>
-    <p>Higgsfield is the AI video tool these prompts are written for: photo to video, camera moves as presets, and Kling, Veo and Seedance in one place.</p>
-    <p>Sign-up is free. Join through this link and Higgsfield gives you <strong>up to 50% off for three hours from your first login</strong>. Make the account now, even if you won't buy today.</p>
-    <a class="cta" href="https://higgsfield.ai/auth/sign-up?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Create my free account →</a>
-    <p class="small"><strong>Opened this from Instagram?</strong> Tap ··· at the top, then "Open in browser" first, so the discount stays with you.</p>
+  <p class="loading">SAUCE LOADED</p>
+  <h1>you said sauce.<br><em>here's the sauce.</em></h1>
+  <p>Every Reel is a few AI shots stitched together. Below are the <strong>exact prompts</strong>, shot by shot. Copy them, swap the duck for your cat, cook your own.</p>
+
+  <div class="offer">
+    <p class="big">Cook it free. <em>Up to 50% off</em> for 3 hours.</p>
+    <p>Every shot was made on Higgsfield (Kling 4.0 Flash, vertical, 720p). Sign-up is free, and through this link Higgsfield gives you <strong>up to 50% off for three hours from your first login</strong>.</p>
+    <a class="cta" href="https://higgsfield.ai/auth/sign-up?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Make my free account →</a>
     <p class="small">Affiliate link: if you subscribe, I may earn a commission at no extra cost to you. The discount is Higgsfield's offer and they set the final amount.</p>
   </div>
 
-  <h2 id="sauce">The sauce</h2>
-  <p class="small">The exact prompts behind the Reels, newest first.</p>
+  <article class="ep" id="022-pigeon-driver">
+    <img src="sauce/022-pigeon-driver.jpg" alt="" width="360" height="640" loading="eager">
+    <div class="ep-body">
+      <p class="ep-no">EP 03 <span class="new">new</span></p>
+      <h2>what if a pigeon learned to drive?</h2>
+<pre id="v3"><b>shot 1</b>  Low-poly 3D animation, bright flat colors. A grey pigeon sits in the driver's seat of a small car, wings on the steering wheel, looking very serious. Fixed camera through the windshield. Vertical 9:16.
 
-  <div class="card">
-    <span class="tag">Reel</span>
-    <h3>The pigeon that learned to drive</h3>
-<pre id="v13">Shot 1: Low-poly 3D animation, bright flat colors. A grey pigeon sits in the driver&#x27;s seat of a small car, wings on the steering wheel, looking very serious. Fixed camera through the windshield. Vertical 9:16.
+<b>shot 2</b>  Low-poly 3D animation, bright flat colors. A grey pigeon in a tiny car gets a driving license handed to it by a stunned examiner holding a clipboard. Medium shot. Vertical 9:16.
 
-Shot 2: Low-poly 3D animation, bright flat colors. A grey pigeon in a tiny car gets a driving license handed to it by a stunned examiner holding a clipboard. Medium shot. Vertical 9:16.
-
-Shot 3: Low-poly 3D animation, bright flat colors. A small car stopped in the middle of a highway, a pigeon on the road eating bread crumbs, a long line of honking cars behind. Aerial shot. Vertical 9:16.
-
-Shot 4: Low-poly 3D animation, bright flat colors. A small car packed with dozens of pigeons, feathers flying, driving through a city square. Tracking shot. Vertical 9:16.
-
-Shot 5: Low-poly 3D animation, bright flat colors. A small car balanced on top of a statue&#x27;s head in a city square, pigeons cheering on the roof. Slow pull-out. Vertical 9:16.</pre>
-    <p class="small">Every shot from the Reel, in order. Generate each one as its own 5-second vertical clip, then cut them together.</p>
-    <div class="row">
-      <button data-copy="v13">Copy</button>
-      <a class="try" data-copy="v13" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+<b>shot 3</b>  Low-poly 3D animation, bright flat colors. A small car stopped in the middle of a highway, a pigeon on the road eating bread crumbs, a long line of honking cars behind. Aerial shot. Vertical 9:16.</pre>
+      <div class="row">
+        <button data-copy="v3">Copy all shots</button>
+        <a class="try" data-copy="v3" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Cook it on Higgsfield →</a>
+      </div>
     </div>
-  </div>
+  </article>
 
-  <div class="card">
-    <span class="tag">Reel</span>
-    <h3>The cat the size of a bus</h3>
-<pre id="v12">Shot 1: Low-poly 3D animation, bright flat colors. A fluffy orange cat the size of a city bus wakes up in a tiny bedroom, its body filling the whole room, furniture crushed. Fixed camera. Vertical 9:16.
+  <article class="ep" id="021-cat-bus">
+    <img src="sauce/021-cat-bus.jpg" alt="" width="360" height="640" loading="lazy">
+    <div class="ep-body">
+      <p class="ep-no">EP 02</p>
+      <h2>what if your cat woke up the size of a bus?</h2>
+<pre id="v2"><b>shot 1</b>  Low-poly 3D animation, bright flat colors. A fluffy orange cat the size of a city bus wakes up in a tiny bedroom, its body filling the whole room, furniture crushed. Fixed camera. Vertical 9:16.
 
-Shot 2: Low-poly 3D animation, bright flat colors. A bus-sized orange cat squeezes its head out of a house&#x27;s front door, the door frame bending. Slow push-in. Vertical 9:16.
+<b>shot 2</b>  Low-poly 3D animation, bright flat colors. A bus-sized orange cat squeezes its head out of a house's front door, the door frame bending. Slow push-in. Vertical 9:16.
 
-Shot 3: Low-poly 3D animation, bright flat colors. A bus-sized orange cat eats from a mountain of tuna cans in a suburban driveway, a tiny owner holding a can opener. Wide shot. Vertical 9:16.
-
-Shot 4: Low-poly 3D animation, bright flat colors. A bus-sized orange cat crouches in a city street staring up at a red laser dot on a glass skyscraper, cars stopped around it. Low angle. Vertical 9:16.
-
-Shot 5: Low-poly 3D animation, bright flat colors. A bus-sized orange cat leaps onto the side of a skyscraper chasing a red dot, windows cracking, people pointing from the street. Camera tilts up. Vertical 9:16.</pre>
-    <p class="small">Every shot from the Reel, in order. Generate each one as its own 5-second vertical clip, then cut them together.</p>
-    <div class="row">
-      <button data-copy="v12">Copy</button>
-      <a class="try" data-copy="v12" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+<b>shot 3</b>  Low-poly 3D animation, bright flat colors. A bus-sized orange cat eats from a mountain of tuna cans in a suburban driveway, a tiny owner holding a can opener. Wide shot. Vertical 9:16.</pre>
+      <div class="row">
+        <button data-copy="v2">Copy all shots</button>
+        <a class="try" data-copy="v2" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Cook it on Higgsfield →</a>
+      </div>
     </div>
-  </div>
+  </article>
 
-  <div class="card">
-    <span class="tag">Reel</span>
-    <h3>The rubber duck that doubles every 5 seconds</h3>
-<pre id="v11">Shot 1: Low-poly 3D animation, bright flat colors. A small yellow rubber duck floating in a bathtub suddenly pops to twice its size, then twice again, water splashing over the edge. Fixed camera, vertical 9:16.
+  <article class="ep" id="020-duck-doubles">
+    <img src="sauce/020-duck-doubles.jpg" alt="" width="360" height="640" loading="lazy">
+    <div class="ep-body">
+      <p class="ep-no">EP 01</p>
+      <h2>what if this duck doubled every 5 seconds?</h2>
+<pre id="v1"><b>shot 1</b>  Low-poly 3D animation, bright flat colors. A small yellow rubber duck floating in a bathtub suddenly pops to twice its size, then twice again, water splashing over the edge. Fixed camera, vertical 9:16.
 
-Shot 2: Low-poly 3D animation, bright flat colors. A yellow rubber duck far too big for the bathtub it sits in keeps swelling, cracking the bathroom tiles and pushing against the walls. Slow push-in, vertical 9:16.
+<b>shot 2</b>  Low-poly 3D animation, bright flat colors. A yellow rubber duck far too big for the bathtub it sits in keeps swelling, cracking the bathroom tiles and pushing against the walls. Slow push-in, vertical 9:16.
 
-Shot 3: Low-poly 3D animation, bright flat colors. A giant yellow rubber duck bursts up through the roof of a small suburban house, roof tiles flying, tiny low-poly people running away. Camera tilts up, vertical 9:16.
-
-Shot 4: Low-poly 3D animation, bright flat colors. A colossal yellow rubber duck towers over a city skyline, taller than a lattice iron tower beside it, helicopters circling its head. Wide shot, slow tilt up, vertical 9:16.
-
-Shot 5: Low-poly 3D animation, bright flat colors. A yellow rubber duck the size of a mountain range rises through the clouds above snowy peaks, its head above the cloud layer. Aerial wide shot, vertical 9:16.
-
-Shot 6: Low-poly 3D animation, bright flat colors. Seen from space, a yellow rubber duck larger than planet Earth floats beside it, the small blue planet drifting into its orbit. Slow pull-out, vertical 9:16.</pre>
-    <p class="small">Every shot from the Reel, in order. Generate each one as its own 5-second vertical clip, then cut them together.</p>
-    <div class="row">
-      <button data-copy="v11">Copy</button>
-      <a class="try" data-copy="v11" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
+<b>shot 3</b>  Low-poly 3D animation, bright flat colors. A giant yellow rubber duck bursts up through the roof of a small suburban house, roof tiles flying, tiny low-poly people running away. Camera tilts up, vertical 9:16.</pre>
+      <div class="row">
+        <button data-copy="v1">Copy all shots</button>
+        <a class="try" data-copy="v1" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Cook it on Higgsfield →</a>
+      </div>
     </div>
+  </article>
+
+  <div class="offer">
+    <p class="big">Your turn. <em>What if…?</em></p>
+    <p>Pick a dumb question, write 3 shots that escalate, add "low-poly 3D, bright flat colors, vertical 9:16" to each. That's the whole recipe.</p>
+    <a class="cta" href="https://higgsfield.ai/auth/sign-up?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Start cooking free →</a>
   </div>
 
-  <h2>How to use the pack</h2>
-  <ol>
-    <li><strong>Copy</strong> a prompt below.</li>
-    <li><strong>Swap</strong> the words in [brackets] for your own idea.</li>
-    <li><strong>Paste</strong> it into an AI video tool. "Try it in Higgsfield" copies the prompt and opens the tool.</li>
-  </ol>
-
-  <h2>The prompts</h2>
-
-  <div class="card">
-    <span class="tag">Photo → video</span>
-    <h3>1. Make a portrait come alive</h3>
-<pre id="v1">She blinks and smiles slightly, her hair moves in a light breeze, slow push-in on her face, the background stays still.</pre>
-    <p class="small">Upload your photo first, then paste this.</p>
-    <div class="row">
-      <button data-copy="v1">Copy</button>
-      <a class="try" data-copy="v1" href="https://higgsfield.ai/image-to-video-ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Photo → video</span>
-    <h3>2. Make a landscape move</h3>
-<pre id="v2">Clouds drift and the water ripples, slow pan from left to right, everything else stays still.</pre>
-    <p class="small">Upload your photo first, then paste this.</p>
-    <div class="row">
-      <button data-copy="v2">Copy</button>
-      <a class="try" data-copy="v2" href="https://higgsfield.ai/image-to-video-ai?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Camera move</span>
-    <h3>3. Push-in (builds tension)</h3>
-<pre id="v3">[Subject] sits alone in a diner at night, slow push-in on their face, neon light through rain on the window, 35mm film look.</pre>
-    <div class="row">
-      <button data-copy="v3">Copy</button>
-      <a class="try" data-copy="v3" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Camera move</span>
-    <h3>4. Orbit (shows off a product)</h3>
-<pre id="v4">[Product] on a stone pedestal, slow orbit around it, soft studio light, dark background, shallow depth of field.</pre>
-    <div class="row">
-      <button data-copy="v4">Copy</button>
-      <a class="try" data-copy="v4" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Camera move</span>
-    <h3>5. Crash zoom (stops the scroll)</h3>
-<pre id="v5">[Subject] turns to the camera on a busy neon street, crash zoom to their face, motion blur, night.</pre>
-    <div class="row">
-      <button data-copy="v5">Copy</button>
-      <a class="try" data-copy="v5" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Camera move</span>
-    <h3>6. Tilt up (reveals the scene)</h3>
-<pre id="v6">Start on [subject]&#x27;s shoes on wet pavement, tilt up to reveal a huge city skyline at sunset.</pre>
-    <div class="row">
-      <button data-copy="v6">Copy</button>
-      <a class="try" data-copy="v6" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Camera move</span>
-    <h3>7. Tracking shot (follows the action)</h3>
-<pre id="v7">Low-angle tracking shot following [subject] running through a forest, handheld feel, morning fog, sun rays through the trees.</pre>
-    <div class="row">
-      <button data-copy="v7">Copy</button>
-      <a class="try" data-copy="v7" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Camera move</span>
-    <h3>8. Drone pull-back (the big ending)</h3>
-<pre id="v8">[Subject] stands on a cliff edge, drone shot pulling back and up to reveal the ocean, golden hour.</pre>
-    <div class="row">
-      <button data-copy="v8">Copy</button>
-      <a class="try" data-copy="v8" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Style</span>
-    <h3>9. Slow-motion close-up</h3>
-<pre id="v9">Extreme close-up of [coffee pouring into a cup], slow motion, steam rising, warm side light, macro lens.</pre>
-    <div class="row">
-      <button data-copy="v9">Copy</button>
-      <a class="try" data-copy="v9" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Style</span>
-    <h3>10. The 4-part formula (fill your own)</h3>
-<pre id="v10">[Subject] [action], [camera move], [light and time of day].</pre>
-    <p class="small">Subject, action, camera, light. Skip one and the AI guesses it.</p>
-    <div class="row">
-      <button data-copy="v10">Copy</button>
-      <a class="try" data-copy="v10" href="https://higgsfield.ai/ai-video?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Try it in Higgsfield →</a>
-    </div>
-  </div>
-
-  <div class="card offer">
-    <p class="big">Got a prompt you like?</p>
-    <p>Create your free account now. Your 3-hour discount of up to 50% starts at your first login, so open the plans right after.</p>
-    <a class="cta" href="https://higgsfield.ai/auth/sign-up?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">Create my free account →</a>
-    <p class="small">Already signed up? <a class="plain" href="https://higgsfield.ai/pricing?fpr=loop-655ce0" rel="sponsored noopener" target="_blank">See the plans</a>. Affiliate link: I may earn a commission if you subscribe.</p>
-  </div>
-
-  <details>
-    <summary>Bonus: the ChatGPT prompt template</summary>
-    <p>For text answers, give the AI three things: a <strong>role</strong>, a <strong>goal</strong>, and an <strong>example</strong>. Works in ChatGPT, Claude or Gemini.</p>
-  <div class="card">
-    <span class="tag">The template</span>
-<pre id="t-main"><b>Role:</b> You are [who the AI should be, e.g. a recruiter at a top tech company].
-<b>Goal:</b> [What you want, and what "good" means, e.g. get me the interview in one read].
-<b>Example:</b> Here's the vibe I want: [paste an example you like].
-
-<b>Task:</b> [What to make]. Ask me up to 3 questions first if anything is unclear.</pre>
-    <button data-copy="t-main">Copy template</button>
-  </div>
-
-  <h3>How to use it</h3>
-  <ol>
-    <li><strong>Role</strong> tells the AI whose knowledge to use.</li>
-    <li><strong>Goal</strong> tells it what winning looks like, so it stops guessing.</li>
-    <li><strong>Example</strong> shows the tone and length. One example beats ten adjectives.</li>
-  </ol>
-
-  <h3>Ready-to-use versions</h3>
-
-  <div class="card">
-    <h3>Job application message</h3>
-<pre id="t-job"><b>Role:</b> You are a recruiter at [company] who reads 200 applications a day.
-<b>Goal:</b> Write a 3-sentence message that gets me a reply. Specific results, no buzzwords.
-<b>Example:</b> "I shipped 3 features users begged for. Here's how I'd do it for your team. 15-min call?"
-
-<b>Task:</b> My experience: [paste]. The role: [paste job post].</pre>
-    <button data-copy="t-job">Copy</button>
-  </div>
-
-  <div class="card">
-    <h3>Study notes that stick</h3>
-<pre id="t-study"><b>Role:</b> You are the best tutor in [subject], known for making hard stuff simple.
-<b>Goal:</b> Help me remember this for an exam in [days]. Short, clear, with memory hooks.
-<b>Example:</b> "Mitochondria = the cell's power bank. No power bank, no energy, phone dies."
-
-<b>Task:</b> Turn these notes into a one-page cheat sheet plus 5 quiz questions: [paste].</pre>
-    <button data-copy="t-study">Copy</button>
-  </div>
-
-  <div class="card">
-    <h3>Instagram / TikTok caption</h3>
-<pre id="t-caption"><b>Role:</b> You are a social media manager for creators with 1M+ followers.
-<b>Goal:</b> A caption that makes people stop, read and comment. Under 150 characters.
-<b>Example:</b> "POV: you finally learned how to prompt 💀 save this before you forget"
-
-<b>Task:</b> My post is about: [describe]. Give me 5 options.</pre>
-    <button data-copy="t-caption">Copy</button>
-  </div>
-
-  <div class="card">
-    <h3>Hard message to send</h3>
-<pre id="t-msg"><b>Role:</b> You are a calm, emotionally smart friend who is great with words.
-<b>Goal:</b> Say what I need to say, kindly, without starting a fight. Max 4 sentences.
-<b>Example:</b> "Hey, I've been thinking about this and I want to be honest with you..."
-
-<b>Task:</b> Situation: [describe]. What I want them to know: [describe].</pre>
-    <button data-copy="t-msg">Copy</button>
-  </div>
-
-  </details>
-
-  <p class="small" style="margin-top:36px">Links to Higgsfield on this page are affiliate links: if you sign up and subscribe, I may earn a commission at no extra cost to you. The camera-move animations in my Reels are drawn demos, not AI output.</p>
+  <p class="small">Higgsfield links on this page are affiliate links. Every clip in my Reels is AI-generated.</p>
 </main>
 <div class="bar" id="bar" hidden>
   <p><span>Free Higgsfield account</span><br>up to 50% off for 3 hours</p>
@@ -328,7 +142,7 @@ Shot 6: Low-poly 3D animation, bright flat colors. Seen from space, a yellow rub
     bar.hidden = seen.size > 0 || scrollY < 200;
   });
   document.querySelectorAll("a.cta").forEach((a) => io.observe(a));
-  // "Try it" copies the prompt on the way out, so it is ready to paste.
+  // "Cook it" copies the shots on the way out, so they are ready to paste.
   document.querySelectorAll("a.try").forEach((a) => a.addEventListener("click", () => { copy(a.dataset.copy).catch(() => {}); }));
 </script>
 </body>
